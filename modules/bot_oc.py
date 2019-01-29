@@ -107,7 +107,21 @@ def who_cite_me_in_coci(a_text):
             str_to_return = str_to_return + "\n Citations: "+str(len(json_output))+ "\n\n"
             for c_elem in json_output:
                 str_to_return = str_to_return + "\n Citing: "+c_elem['citing']
-                str_to_return = str_to_return + "\n Timespan: "+c_elem['timespan']
+
+                pub_date = ""
+                result_y = re.search(r"(\d{1,})Y",c_elem['timespan'])
+                if result_y:
+                    pub_date += str(result_y.groups(0)[0]) + " Years"
+                    result_y = re.search(r"(\d{1,})M",c_elem['timespan'])
+                    if result_y:
+                        pub_date += ", "+str(result_y.groups(0)[0]) + " Months"
+                        result_y = re.search(r"(\d{1,})D",c_elem['timespan'])
+                        if result_y:
+                            pub_date += ", "+str(result_y.groups(0)[0]) + " Days"
+
+                str_to_return = str_to_return + "\n Timespan: "+pub_date
+
+
                 str_to_return = str_to_return + "\n Resource: "+"http://opencitations.net/index/coci/browser/ci/"+c_elem['oci']
                 str_to_return = str_to_return + "\n\n"
     except:
