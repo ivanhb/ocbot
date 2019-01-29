@@ -14,8 +14,8 @@ import importlib.util
 import re
 
 #TELEGRAM BOT PARAMS
-TOKEN = '713108177:AAGGYJjhB_Pvftffz-F13xz-k5KG3XLlJGo'
-BOTNAME = '/ivanhbBot'
+TOKEN = '552169683:AAFSmGVWFDxJlL3xp1v2ABw8xU_nkRaUhbA'
+BOTNAME = '/OpenCitationsBot'
 
 # Get file paths of all modules.
 MODULES_PATH = glob.glob('modules/*.py')
