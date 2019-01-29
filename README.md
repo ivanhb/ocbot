@@ -1,5 +1,5 @@
-# ocbot
-A Telegram Bot for OpenCitations based on the [CpBoT](https://github.com/ivanhb/CpBoT) framework.  
+# OCbot
+A Telegram Bot for [OpenCitations](http://opencitations.net) based on the [CpBoT](https://github.com/ivanhb/CpBoT) framework.  
 In case you want to talk with it add @OpenCitationsBot.
 
 
