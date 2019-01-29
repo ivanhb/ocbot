@@ -70,10 +70,10 @@ def ask_coci(a_text):
             return "No data found in COCI for: "+ input
         else:
             rc_data = json_output[0]
-            str_to_return = str_to_return + "\n\n **Title:** "+rc_data['title']
-            str_to_return = str_to_return + "\n\n **Author/s:** "+rc_data['author']
-            str_to_return = str_to_return + "\n\n **Publication year:** "+rc_data['year']
-            str_to_return = str_to_return + "\n\n **Citations:** "+rc_data['citation_count']
+            str_to_return = str_to_return + "\n\n Title: "+rc_data['title']
+            str_to_return = str_to_return + "\n\n Author/s: "+rc_data['author']
+            str_to_return = str_to_return + "\n\n Publication year: "+rc_data['year']
+            str_to_return = str_to_return + "\n\n Citations: "+rc_data['citation_count']
     except:
         return "Sorry, the connection with COCI went wrong!"
 
@@ -103,11 +103,11 @@ def who_cite_me_in_coci(a_text):
         if len(json_output) == 0:
             return "No citations found in COCI for: "+ input
         else:
-            str_to_return = str_to_return + "\n #Citations: "+str(len(json_output))+ "\n\n"
+            str_to_return = str_to_return + "\n Citations: "+str(len(json_output))+ "\n\n"
             for c_elem in json_output:
-                str_to_return = str_to_return + "\n **Citing:** "+c_elem['citing']
-                str_to_return = str_to_return + "\n **Timespan:** "+c_elem['timespan']
-                str_to_return = str_to_return + "\n **Link to OC:** "+"[http://opencitations.net/...](http://opencitations.net/index/coci/browser/ci/)"+c_elem['oci']
+                str_to_return = str_to_return + "\n Citing: "+c_elem['citing']
+                str_to_return = str_to_return + "\n Timespan: "+c_elem['timespan']
+                str_to_return = str_to_return + "\n Resource: "+"http://opencitations.net/index/coci/browser/ci/"+c_elem['oci']
                 str_to_return = str_to_return + "\n\n"
     except:
         return "Sorry, the connection with COCI went wrong!"
