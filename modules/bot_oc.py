@@ -73,6 +73,7 @@ def ask_coci(a_text):
             str_to_return = str_to_return + "\n\n Title: "+rc_data['title']
             str_to_return = str_to_return + "\n\n Author/s: "+rc_data['author']
             str_to_return = str_to_return + "\n\n Publication year: "+rc_data['year']
+            str_to_return = str_to_return + "\n\n "+'https://www.doi.org/'+input
             str_to_return = str_to_return + "\n\n Citations: "+rc_data['citation_count']
     except:
         return "Sorry, the connection with COCI went wrong!"
